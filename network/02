@@ -1,0 +1,3 @@
+2. Identify and display the Ethernet interface characterics.
+
+networksetup -getinfo Ethernet

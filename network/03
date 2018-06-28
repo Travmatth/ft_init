@@ -1,0 +1,3 @@
+3. Identify the MAC address of the wi-fi card
+
+networksetup -getMACaddress Wi-Fi
