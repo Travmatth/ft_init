@@ -5,8 +5,8 @@
 
 TARGET=/etc/crontab
 DUMP=/etc/.crontab_dump
-CRON_CURRENT=`md5sum $TARGET | awk '{ print $1 }'`
-CRON_DUMP=`md5sum $DUMP | awk '{ print $1 }'`
+CURRENT_HASH=`md5sum $TARGET | awk '{ print $1 }'`
+NEW_HASH=`md5sum $DUMP | awk '{ print $1 }'`
 
 if [ ! -e $DUMP ]; then
 	echo "Dump does not exist"
@@ -14,11 +14,11 @@ if [ ! -e $DUMP ]; then
 	exit 0
 fi
 
-if [ -z "$CRON_CURRENT" ] | [ -z "$CRON_DUMP" ]; then
-	echo "CRON_CURRENT is empty."
+if [ -z "$CURRENT_HASH" ] | [ -z "$NEW_HASH" ]; then
+	echo "CURRENT_HASH is empty."
 else
-	if [ "$CRON_CURRENT" != "$CRON_DUMP" ]; then
-		echo "crontab has been modified" | mail -s "here is the log" root
+	if [ "$CURRENT_HASH" != "$NEW_HASH" ]; then
+		echo "crontab has been updated" | mail -s "changes:" root
 	fi
 fi
 sudo cp $TARGET $DUMP
