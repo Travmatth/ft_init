@@ -1,3 +1,5 @@
-1. In what file can you find the installed version of your Debian?
+# 1. In what file can you find the installed version of your Debian?
 
+# like other ubuntu derivatives, the version info is found under
+# /etc/debian_version
 cat /etc/debian_version

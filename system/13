@@ -1,3 +1,3 @@
-13. Name the command that find, in real time, currently running processes
+# 13. Name the command that find, in real time, currently running processes
 
-ps
+ps aux

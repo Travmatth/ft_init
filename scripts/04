@@ -1,0 +1,24 @@
+#!/bin/bash
+# 4. Write a script which monitors the modifications made to the /etc/crontab
+# file and sends an e-mail to root if the file is modified. Create a
+# scheduled task to run this script everyday at midnight.
+
+TARGET=/etc/crontab
+DUMP=/etc/.crontab_dump
+CRON_CURRENT=`md5sum $TARGET | awk '{ print $1 }'`
+CRON_DUMP=`md5sum $DUMP | awk '{ print $1 }'`
+
+if [ ! -e $DUMP ]; then
+	echo "Dump does not exist"
+	sudo cp $TARGET $DUMP
+	exit 0
+fi
+
+if [ -z "$CRON_CURRENT" ] | [ -z "$CRON_DUMP" ]; then
+	echo "CRON_CURRENT is empty."
+else
+	if [ "$CRON_CURRENT" != "$CRON_DUMP" ]; then
+		echo "crontab has been modified" | mail -s "here is the log" root
+	fi
+fi
+sudo cp $TARGET $DUMP

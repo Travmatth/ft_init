@@ -1,3 +1,4 @@
-3. What file has to be modified to make it permanent?
+# 3. What file has to be modified to make it permanent?
 
+# the hostname information on your machine is found under /etc/hostname
 cat /etc/hostname

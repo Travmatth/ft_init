@@ -1,3 +1,32 @@
-6. Get the complete path of the file that contains the IP address of the DNS server you're using
+#6. Get the complete path of the file that contains the IP address
+# of the DNS server you're using
+
+# /etc
+# """
+# This is the nerve center of your system, it contains all system related
+# configuration files in here or in its sub-directories. A "configuration file"
+# is defined as a local file used to control the operation of a program; it
+# must be static and cannot be an executable binary. For this reason, it's a
+# good idea to backup this directory regularly. It will definitely save you a
+# lot of re-configuration later if you re-install or lose your current
+# installation. Normally, no binaries should be or are located here.
+# """
+# /etc/resolv.conf
+# """
+# Configuration of how DNS is to occur is defined in this file.
+# It tells the name resolver libraries where they need to go to find
+# information not found in the /etc/hosts file. This always has at least one
+# nameserver line, but preferably three. The resolver uses each in turn.
+# More than the first three can be included but anything beyond the first
+# three will be ignored. Two lines that appear in the /etc/resolv.conf file
+# are domain and search. Both of these are mutually exclusive options, and
+# where both show up, the last one wins. Other entries beyond the three
+# discussed here are listed in the man pages but aren't often used.
+# """
+# https://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/etc.html
+
+# According to the linux documentation project, we should find the file
+# containing the IP address information to be located in /etc/resolv.config
+# since this is true for osx as well, we'd expect the same answer will apply.
 
 cat /etc/resolv.conf

@@ -1,0 +1,5 @@
+# 18. With the previous command, authorize only IP addresses from 10.0.0.0/8 to connect
+# to your system
+
+sudo iptables -P INPUT DROP
+sudo iptables -A INPUT -p tcp -s 10.0.0/8 -j ACCEPT

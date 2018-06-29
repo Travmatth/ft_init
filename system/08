@@ -1,4 +1,4 @@
-8. What file contains the RSA keys of systems that are authorized to connect via SSH?
-
-https://www.debian.org/devel/passwordlessssh
+# 8. What file contains the RSA keys of systems that are authorized to connect via SSH?
+# by default, ssh keys are stored in ~/.ssh/id_rsa
+# https://askubuntu.com/questions/76337/where-is-the-ssh-server-fingerprint-generated-stored
 ~/.ssh/id_rsa

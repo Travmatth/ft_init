@@ -1,3 +1,10 @@
-8. Find the provider of slash16.org
+# 8. Find the provider of slash16.org
 
-whois slash16.org
+# By provider I take this to mean the website host, i.e. whose servers this
+# website phsyically resides on. To find this information we consult the
+# Internet registry, where website owners have their details listed.
+# Specifically, we find that slash16.org has all it's name servers (servers
+# maintained by website hosts to maintain dns visibility) with AWS, which is a
+# piece of evidence that AWS is in fact the host of this website.
+#
+whois slash16.org | grep "Name Server"

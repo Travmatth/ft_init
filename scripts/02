@@ -1,0 +1,13 @@
+#!/bin/bash
+# 2. Write a script which updates all the package sources, then all the packages
+# and then
+# logs everything in a file named /var/log/update_script.log. Create a scheduled
+# task for this script, once per week at 4 AM.
+
+# cron syntax: minute hour day-of-month month day-of-week <cmd>
+f() {
+	sudo apt-get update >> /var/log/update_script.log;
+	echo '0 4 * * 1 root /etc/cron.daily/apt_update.sh' | crontab
+}
+
+f

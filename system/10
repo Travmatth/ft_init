@@ -1,3 +1,4 @@
-10. Name the command that lists the partition tables of drives?
+# 10. Name the command that lists the partition tables of drives?
 
-lsblk or sudo fdisk -l
+# sudo fdisk -l
+lsblk

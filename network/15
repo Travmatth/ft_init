@@ -1,3 +1,7 @@
-15. Make the intra.42.fr address reroute to 46.19.122.85
+# 15. Make the intra.42.fr address reroute to 46.19.122.85
+
+# to make the intra address reroute to a different ip address, all that is
+# necessary is to edit the /etc/hosts file with the ip addresss of the site
+# you'd like to be routed to instead - so something like this would suffice:
 
 s/#10.51.1.38/46.19.122.85/

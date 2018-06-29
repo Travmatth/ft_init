@@ -1,3 +1,4 @@
-1. Get the list of the network interfaces of the machine without displaying any detail of these interfaces. Only the list of names.
+#1. Get the list of the network interfaces of the machine without displaying any detail of these interfaces. Only the list of names.
 
+#ifconfig = (network)i(nter)f(ace)config(uration)
 ifconfig -l

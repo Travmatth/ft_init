@@ -1,0 +1,9 @@
+j!/bin/bash
+#3. Write a script which displays the list of files from the folder given as
+# parameter, sorted by size.
+
+f() {
+	ls -lS $1;
+}
+
+f

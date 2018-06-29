@@ -1,4 +1,16 @@
-11. Use the output of the previous command to find the name and IP address of the
-device that makes the link between you (local network) and the outside world
+# 11. Use the output of the previous command to find the name and IP address of the
+# device that makes the link between you (local network) and the outside world
 
-route -n get default
+# we need to find the hop in which our the ip is converted from the internal
+# ip to the extenal ip, or the nat layer.
+
+traceroute slash16.org 2> /dev/null | grep nat | awk '{print $2 " " $3;}'
+
+# nat (10.90.1.11)
+
+# we could verify by looking up our nat directly
+# nslookup nat
+# Server:		10.51.1.253
+# Address:	10.51.1.253#53
+# Name:	nat.42.us.org
+# Address: 10.90.1.11
